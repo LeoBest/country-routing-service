@@ -1,0 +1,6 @@
+routing:
+  data-url: https://raw.githubusercontent.com/mledoze/countries/master/countries.json
+
+logging:
+  level:
+    com.example.routing: INFO
