@@ -46,15 +46,10 @@ public class BfsRouteFinder implements RouteFinder {
     }
 
     private List<String> reconstructPath(Map<String, String> parent, String destination) {
-        List<String> path = new ArrayList<>();
-        String current = destination;
-
-        while (current != null) {
-            path.add(current);
-            current = parent.get(current);
+        var path = new ArrayDeque<String>();
+        for (String c = destination; c != null; c = parent.get(c)) {
+            path.addFirst(c);
         }
-
-        Collections.reverse(path);
-        return path;
+        return new ArrayList<>(path);
     }
 }
